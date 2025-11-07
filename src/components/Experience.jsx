@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 const Experience = ({job,company,start,end,area}) => {
   return (
     <div className='experience'>

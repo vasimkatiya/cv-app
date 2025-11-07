@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Education = ({college,company,finish}) => {
+const Education = ({college,degree,finish}) => {
   return (
     <div className='education'>
         <h2>{college}</h2>
-        <h3>{company}</h3>
-        <h2>{finish}</h2>
+        <h3>{degree}</h3>
+        <h4>{finish}</h4>
     </div>
   )
 }

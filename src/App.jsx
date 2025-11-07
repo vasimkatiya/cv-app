@@ -34,8 +34,8 @@ const App = () => {
       changes:(e)=> setName(e.target.value)
     },
     {
-      text : "date of borth",
-      place:"date of borth",
+      text : "date of birth",
+      place:"date of birth",
       type:"date",
       require:true,
       value:DOB,
@@ -52,7 +52,7 @@ const App = () => {
     {
       text : "phone",
       place:"+91 884XX XXXXX",
-      type:"number",
+      type:"tel",
       require:true,
       value:number,
       changes:(e)=> setnumber(e.target.value)
@@ -174,8 +174,11 @@ const App = () => {
           {Exp.map((e,i)=>{
             return <InputSet key={i} text={e.text} type={e.type} place={e.place} require={e.require} value={e.value} changes={e.changes} />
           })}
-          <label>job description</label>
+          <div className='des'>
+
+          <label className='desc'>job description</label>
           <TextAreaCom key={101} change={(e)=>setarea(e.target.value)} value={area} place={"job description"} />
+          </div>
           <h1>skills</h1>
           <p>three skills are required.</p>
           {Skills.map((e,i)=>{
@@ -185,16 +188,19 @@ const App = () => {
           <button type="submit">Complete</button>
           </form>
       </div>
+      <div className="format">
+
       <div className="cv-format">
         <Header name={name} date={DOB} email={email} phone={number} address={address} />
-        <Education college={Clg} company={Degree} finish={FDate} />
+        <Education college={Clg} degree={Degree} finish={FDate} />
         <Experience job={Job} company={Company} start={Start} end={End} area={area} />
         <SkillArea skill={skills} />
         <SkillArea skill={skills2} />
         <SkillArea skill={skills3} />
       </div>
+      </div>
     </div>
   )
 }
 
-export default App
+export default App;
